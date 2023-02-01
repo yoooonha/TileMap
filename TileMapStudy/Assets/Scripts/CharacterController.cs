@@ -10,7 +10,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] int _hp;
     [SerializeField] GameObject _uiPanel;
     [SerializeField] MonsterControler _monCon;
-
+    [SerializeField] GameUi _gameUI;
+    [SerializeField] Setskillitems _skillPanel;
     Animator _ani; //Animator객체를 변수에 담아 사용
     bool _isGameOver=false;
     GameObject _bullet;
@@ -18,12 +19,29 @@ public class CharacterController : MonoBehaviour
     GameObject _cicleBullet;
     GameObject _rotateBullet;
 
+    int _heroexp = 0;
+    int _needexp = 1000;
+
+    int _herohp = 0;
+
+
+    public void heroExpUp()
+    {
+        //if(_heroexp>=_needexp) _skillPanel
+        //_heroexp += 20;
+       // _gameUI.ExpChange((float)_heroexp / _needexp);
+    }
+
+
+
+ 
     public void hitted()
     {
         if (_hp < 0) return;
         _hp -= 5;
         if(_hp<0)
         {
+            
             //Game Over On
             _isGameOver = true;
             _uiPanel.SetActive(true);

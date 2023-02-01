@@ -59,11 +59,14 @@
     <Compile Include="Assets\Scripts\OrderTest\OrderCharacter.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\UI\OptionControll.cs" />
+    <Compile Include="Assets\Scripts\UI\GameUi.cs" />
     <Compile Include="Assets\Scripts\OrderTest\OrderMonsterController.cs" />
     <Compile Include="Assets\Scripts\OrderTest\OrderGameController.cs" />
     <Compile Include="Assets\Scripts\RotateBullet.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonTest.cs" />
     <Compile Include="Assets\Scripts\Bible.cs" />
+    <Compile Include="Assets\Scripts\UI\Lobby.cs" />
     <Compile Include="Assets\Scripts\MonsterControler.cs" />
     <Compile Include="Assets\Scripts\CharacterController.cs" />
     <Compile Include="Assets\Scripts\OrderTest\OrderUIController.cs" />
@@ -72,8 +75,10 @@
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\BulletRemove.cs" />
-    <Compile Include="Assets\Scripts\Lobby.cs" />
-    <Compile Include="Assets\Scripts\GameUi.cs" />
+    <Compile Include="Assets\Scripts\UIText\UIController.cs" />
+    <Compile Include="Assets\Scripts\CsvController.cs" />
+    <Compile Include="Assets\Scripts\UI\Setskillitems.cs" />
+    <Compile Include="Assets\Scripts\UI\Skillitem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

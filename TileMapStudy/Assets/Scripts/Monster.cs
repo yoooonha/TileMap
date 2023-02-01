@@ -91,7 +91,7 @@ public class Monster : MonoBehaviour
         isHitted= true;
         if(_hp < 0)
         {
-           
+            _mc.heroExpup();     
             _ani.SetTrigger("dead");
             isLive = false;
 
@@ -103,7 +103,7 @@ public class Monster : MonoBehaviour
     {
         Debug.Log("dead end Input?");
          gameObject.SetActive(false);
-        //_mc.newMonster();
+        _mc.newMonster();
 
 
 

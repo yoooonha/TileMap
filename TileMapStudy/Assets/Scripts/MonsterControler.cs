@@ -53,6 +53,12 @@ public class MonsterControler : MonoBehaviour
         }
 
     }
+
+    public void heroExpup()
+    {
+        _hero.gameObject.GetComponent<CharacterController>().heroExpUp();
+    }
+   
         public void newMonster()
         {
         //신규 몬스터를 생성합시다.
