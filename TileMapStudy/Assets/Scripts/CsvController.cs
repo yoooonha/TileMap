@@ -9,12 +9,14 @@ using UnityEngine;
 
 public class CsvController : MonoBehaviour
 {
-    public List<stHeroData> lstHero = new List<stHeroData>();
-   
-    // Start is called before the first frame update
+    public List<stskillData> lstHero = new List<stskillData>();
+    public List<stskillData> IstSkillData = new List<stskillData>();
+
+
+
     void Start()
     {
-        //ReadFile();
+        ReadFile();
         //WriteFile();
        
     
@@ -52,7 +54,7 @@ public class CsvController : MonoBehaviour
 
     void ReadFile()
     {
-        string path = Application.dataPath + "/Resources/Datas/Source.csv";
+        string path = Application.dataPath + "/Resources/Datas/SkillData.csv";
         if(File.Exists(path))
         {
             string source;
@@ -67,45 +69,51 @@ public class CsvController : MonoBehaviour
                     string[] values = Regex.Split(lines[i], ",");
                     if (values.Length == 0 || string.IsNullOrEmpty(values[0])) continue;
 
-                    stHeroData tempData = new stHeroData();
+                    stskillData tempData = new stskillData();
                     tempData.INDEX = int.Parse(values[0]);
-                    tempData.NAME = values[1];
-                    tempData.EXP = int.Parse(values[2]);
-                    tempData.LEVEL =int.Parse(values[3]);
-                    tempData.MOVESPEED = float.Parse(values[4]);
-                    tempData.ATTACKPOWER = int.Parse(values[5]);
+                    tempData.LV = int.Parse(values[1]);
+                    tempData.NAME = values[2];
+                    tempData.DMG = int.Parse(values[3]);
+                    tempData.BULLET = int.Parse(values[4]);
+                    tempData.RANGE = float.Parse(values[5]);
 
-                    lstHero.Add(tempData);
+
+                    IstSkillData.Add(tempData);
+
                 }
             }
         }
 
-        foreach(stHeroData data in lstHero)
-        {
-            Debug.Log(data.NAME + ", " + data.LEVEL);
-        }
+        
     }
-}
-
-
-public struct stHeroData
-{
-    public int INDEX;
-    public string NAME;
-    public int EXP;
-    public int LEVEL;
-    public float MOVESPEED;
-    public int ATTACKPOWER;
-}
-
-
 public struct stskillData
 {
     public int INDEX;
     public int LV;
+    public string NAME;
     public int DMG;
     public int BULLET;
     public float RANGE;
 
    
 }
+
+}
+
+
+
+
+
+
+
+
+//public struct stHeroData
+//{
+//    public int INDEX;
+//    public string NAME;
+//    public int EXP;
+//    public int LEVEL;
+//    public float MOVESPEED;
+//    public int ATTACKPOWER;
+//}
+

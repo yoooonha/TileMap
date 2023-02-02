@@ -13,7 +13,7 @@ public class GameUi : MonoBehaviour
         //_expGauge.transform.localScale += new Vector3(Time.deltaTime,0,0);
         //if (_expGauge.transform.localScale.x >= 1) _expGauge.transform.localScale = new Vector3(0, 1, 1);
     }
-    // Start is called before the first frame update
+    
   public void OnButtonToLobby()
     {
         SceneManager.LoadScene("Lobby");
@@ -32,4 +32,7 @@ public class GameUi : MonoBehaviour
         _expGauge.transform.localScale = new Vector3(value,1,1);
 
     }
+
+
+
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static CsvController;
 
 public class Skillitem : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Skillitem : MonoBehaviour
     // Start is called before the first frame update
 public void Init(stskillData data)
     {
-       // _name.text = data.NAME + ", LV." + data.LV;
-        //_descript.text="DMG : " + data.DMG+", RANGE : "+ data.RANGE+", BULLET"
+        _name.text = data.NAME + ", LV." + data.LV;
+        _descript.text = "DMG : " + data.DMG + ", RANGE : " + data.RANGE + ", BULLET" + data.BULLET;
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] GameObject _uiPanel;
     [SerializeField] MonsterControler _monCon;
     [SerializeField] GameUi _gameUI;
-    [SerializeField] Setskillitems _skillPanel;
+    [SerializeField] SetSkillItems _skillPanel;
+    [SerializeField] Image _image;
     Animator _ani; //Animator객체를 변수에 담아 사용
     bool _isGameOver=false;
     GameObject _bullet;
@@ -23,13 +25,19 @@ public class CharacterController : MonoBehaviour
     int _needexp = 1000;
 
     int _herohp = 0;
+    int currnthp;
 
 
     public void heroExpUp()
     {
-        //if(_heroexp>=_needexp) _skillPanel
-        //_heroexp += 20;
-       // _gameUI.ExpChange((float)_heroexp / _needexp);
+        _heroexp += 500;
+        if (_heroexp >= _needexp) _skillPanel.ShowSkillPanel();
+        _gameUI.ExpChange((float)_heroexp / _needexp);
+    }
+
+    public void heroHp()
+    {
+
     }
 
 
@@ -45,7 +53,7 @@ public class CharacterController : MonoBehaviour
             //Game Over On
             _isGameOver = true;
             _uiPanel.SetActive(true);
-            //Debug.Log("1");
+            
         }
     }
     
@@ -63,6 +71,8 @@ public class CharacterController : MonoBehaviour
         _cicleBullet = Resources.Load("Prefabs/CircleBullet") as GameObject;
         _rotateBullet = Resources.Load("Prefabs/RotateBullet") as GameObject;
         
+        
+
         //float sign = Mathf.Sin(30);
         //float radSign = 30 * Mathf.Deg2Rad;
         //float resultSign = Mathf.Sin(radSign);
