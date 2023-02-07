@@ -11,16 +11,50 @@ public class CsvController : MonoBehaviour
 {
     public List<stskillData> lstHero = new List<stskillData>();
     public List<stskillData> IstSkillData = new List<stskillData>();
-
+    public List<stLevelData> IstLevelData = new List<stLevelData>();
 
 
     void Start()
     {
         ReadFile();
         //WriteFile();
-       
-    
+        ReadLevelData();
+
+        
+
     }
+
+    void ReadLevelData()
+    {
+            string path = Application.dataPath + "/Resources/Datas/levelData.csv";
+            if (File.Exists(path))
+            {
+                string source;
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    string[] lines;
+                    source = sr.ReadToEnd();
+                    lines = Regex.Split(source, @"\r\n|\n\r|\n|\r");
+                    string[] header = Regex.Split(lines[0], ",");
+                    for (int i = 1; i < lines.Length; i++)
+                    {
+                        string[] values = Regex.Split(lines[i], ",");
+                        if (values.Length == 0 || string.IsNullOrEmpty(values[0])) continue;
+
+                        stLevelData tempData = new stLevelData();
+                        tempData.INDEX = int.Parse(values[0]);
+                        tempData.LEVELE = int.Parse(values[1]);
+                        tempData.SUMEXP = int.Parse( values[2]);
+                        tempData.EXP = int.Parse(values[3]);
+
+
+
+                    IstLevelData.Add(tempData);
+
+                    }
+                }
+            }
+        }
 
     void WriteFile()
     {
@@ -39,7 +73,7 @@ public class CsvController : MonoBehaviour
         string[][] outPuts = lists.ToArray();
 
         StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < outPuts.Length; i++)
+        for (int i = 0; i < outPuts.Length; i++)
         {
             sb.AppendLine(string.Join(delimiter, outPuts[i]));
         }
@@ -55,7 +89,7 @@ public class CsvController : MonoBehaviour
     void ReadFile()
     {
         string path = Application.dataPath + "/Resources/Datas/SkillData.csv";
-        if(File.Exists(path))
+        if (File.Exists(path))
         {
             string source;
             using (StreamReader sr = new StreamReader(path))
@@ -64,7 +98,7 @@ public class CsvController : MonoBehaviour
                 source = sr.ReadToEnd();
                 lines = Regex.Split(source, @"\r\n|\n\r|\n|\r");
                 string[] header = Regex.Split(lines[0], ",");
-                for(int i = 1; i < lines.Length; i++)
+                for (int i = 1; i < lines.Length; i++)
                 {
                     string[] values = Regex.Split(lines[i], ",");
                     if (values.Length == 0 || string.IsNullOrEmpty(values[0])) continue;
@@ -72,7 +106,7 @@ public class CsvController : MonoBehaviour
                     stskillData tempData = new stskillData();
                     tempData.INDEX = int.Parse(values[0]);
                     tempData.LV = int.Parse(values[1]);
-                    tempData.NAME = values[2];
+                    tempData.ETYPE = (ESkillType)Enum.Parse(typeof(ESkillType), values[2]);
                     tempData.DMG = int.Parse(values[3]);
                     tempData.BULLET = int.Parse(values[4]);
                     tempData.RANGE = float.Parse(values[5]);
@@ -84,13 +118,14 @@ public class CsvController : MonoBehaviour
             }
         }
 
-        
+
     }
+}
 public struct stskillData
 {
     public int INDEX;
     public int LV;
-    public string NAME;
+    public ESkillType ETYPE;
     public int DMG;
     public int BULLET;
     public float RANGE;
@@ -98,7 +133,31 @@ public struct stskillData
    
 }
 
+    public enum ESkillType
+    {
+    none,
+    bibleShot,
+    homingShot,
+    dagger,
+    multiShot,
+
+
 }
+
+public struct stLevelData
+{
+    public int INDEX;
+    public int LEVELE;
+    public int SUMEXP;
+    public int EXP;
+
+
+
+
+}
+
+
+
 
 
 
