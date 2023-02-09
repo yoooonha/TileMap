@@ -56,21 +56,26 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CharacterBullet\BibleFire.cs" />
     <Compile Include="Assets\Scripts\UI\Skillitem.cs" />
     <Compile Include="Assets\Scripts\OrderTest\OrderCharacter.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
+    <Compile Include="Assets\Scripts\CharacterBullet\BaseFire.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\UI\OptionControll.cs" />
+    <Compile Include="Assets\Scripts\OptionPanel.cs" />
     <Compile Include="Assets\Scripts\UI\GameUi.cs" />
     <Compile Include="Assets\Scripts\OrderTest\OrderMonsterController.cs" />
     <Compile Include="Assets\Scripts\OrderTest\OrderGameController.cs" />
     <Compile Include="Assets\Scripts\RotateBullet.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonTest.cs" />
+    <Compile Include="Assets\Scripts\CharacterBullet\HomingFire.cs" />
     <Compile Include="Assets\Scripts\Bible.cs" />
     <Compile Include="Assets\Scripts\UI\Lobby.cs" />
     <Compile Include="Assets\Scripts\MonsterControler.cs" />
     <Compile Include="Assets\Scripts\CharacterController.cs" />
     <Compile Include="Assets\Scripts\CsvController.cs" />
+    <Compile Include="Assets\Scripts\CharacterBullet\DaggerFire.cs" />
     <Compile Include="Assets\Scripts\OrderTest\OrderUIController.cs" />
     <Compile Include="Assets\Scripts\CicleBullet.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />

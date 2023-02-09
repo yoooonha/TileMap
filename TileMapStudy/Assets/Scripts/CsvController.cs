@@ -20,7 +20,12 @@ public class CsvController : MonoBehaviour
         //WriteFile();
         ReadLevelData();
 
-        
+        foreach(stLevelData data in IstLevelData)
+        {
+            Debug.Log("INDEX :" + data.INDEX+"Level :"+ data.LEVELE+ "SUMEXP :"+data.SUMEXP+"EXP :"+ data.EXP);
+
+
+        }
 
     }
 
@@ -41,15 +46,15 @@ public class CsvController : MonoBehaviour
                         string[] values = Regex.Split(lines[i], ",");
                         if (values.Length == 0 || string.IsNullOrEmpty(values[0])) continue;
 
-                        stLevelData tempData = new stLevelData();
-                        tempData.INDEX = int.Parse(values[0]);
-                        tempData.LEVELE = int.Parse(values[1]);
-                        tempData.SUMEXP = int.Parse( values[2]);
-                        tempData.EXP = int.Parse(values[3]);
+                        stLevelData data = new stLevelData();
+                    data.INDEX = int.Parse(values[0]);
+                    data.LEVELE = int.Parse(values[1]);
+                    data.SUMEXP = int.Parse( values[2]);
+                    data.EXP = int.Parse(values[3]);
 
 
 
-                    IstLevelData.Add(tempData);
+                    IstLevelData.Add(data);
 
                     }
                 }
@@ -150,10 +155,6 @@ public struct stLevelData
     public int LEVELE;
     public int SUMEXP;
     public int EXP;
-
-
-
-
 }
 
 

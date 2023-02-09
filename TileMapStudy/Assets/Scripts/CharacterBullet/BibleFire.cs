@@ -18,7 +18,7 @@ public class BibleFire : MonoBehaviour //성서
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.T))
+       
         {
             Instantiate(_bible, transform);
         }
@@ -40,12 +40,16 @@ public class BibleFire : MonoBehaviour //성서
     IEnumerator CoMakeBible()
     {
         int count = 0;
-        while(count<_level) //
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+
+            while (count<_level) //
         {
             Instantiate(_bible, transform);
             yield return new WaitForSeconds(0.5f); //0.5초씩 만큼 기다렸다가 넘어감
             count++;
 
+        }
         }
     }
 

@@ -8,7 +8,7 @@ public class Monster : MonoBehaviour
     Transform _hero;
     GameObject _ghero;
     float _speed;
-    int _hp;
+    [SerializeField]int _hp;
     Animator _ani;
 
     bool isLive = false;
@@ -25,7 +25,7 @@ public class Monster : MonoBehaviour
     {
 
         _render= GetComponent<SpriteRenderer>();
-        Debug.Log("monster load and start");
+        //Debug.Log("monster load and start");
         _ani = GetComponent<Animator>();
         //_hero.position
         //transform.position
@@ -101,7 +101,7 @@ public class Monster : MonoBehaviour
 
     void deadEnd()
     {
-        Debug.Log("dead end Input?");
+        //Debug.Log("dead end Input?");
          gameObject.SetActive(false);
         _mc.newMonster();
 
