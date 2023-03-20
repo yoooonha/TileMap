@@ -301,6 +301,7 @@ public class CharacterController : MonoBehaviour
             }
         }
 
+
         private void ResetPosition()
         {
                 transform.position = Vector3.zero;

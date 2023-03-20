@@ -10,6 +10,8 @@ public class SetSkillItems : MonoBehaviour
     [SerializeField] Transform _content;
     [SerializeField] CharacterController _hero;
 
+    
+
     List<GameObject> IstItems = new List<GameObject>();
     public void ShowSkillPanel()
     {
