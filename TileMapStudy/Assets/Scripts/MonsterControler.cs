@@ -81,6 +81,7 @@ public class MonsterControler : MonoBehaviour
     {
         float distance = 0f;
         Transform target = null;
+
         foreach (Monster mon in mons)
         {
             if (distance > Vector3.Distance(mon.transform.position, _hero.position)||target==null) //(몬스터위치,캐릭터위치)

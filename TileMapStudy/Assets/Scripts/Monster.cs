@@ -17,6 +17,7 @@ public class Monster : MonoBehaviour
     float _timer = 0f;
     
     bool isRun = false;
+
     float _runTimer = 0f;
     // Start is called before the first frame update
 

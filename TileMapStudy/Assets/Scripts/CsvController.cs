@@ -25,6 +25,7 @@ public class CsvController : MonoBehaviour
             Debug.Log("INDEX :" + data.INDEX+"Level :"+ data.LEVELE+ "SUMEXP :"+data.SUMEXP+"EXP :"+ data.EXP);
 
 
+
         }
 
     }

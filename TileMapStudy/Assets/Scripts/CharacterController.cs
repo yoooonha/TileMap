@@ -76,6 +76,8 @@ public class CharacterController : MonoBehaviour
         {
             setLevelUpExp();
             _skillPanel.ShowSkillPanel();
+
+
         }
         _gameUI.ExpChange(_heroexp,_needexp);
     }
